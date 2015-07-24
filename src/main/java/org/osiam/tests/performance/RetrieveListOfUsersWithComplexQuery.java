@@ -29,7 +29,7 @@ import org.junit.Test;
 import org.osiam.client.query.Query;
 import org.osiam.client.query.QueryBuilder;
 
-public class RetrieveListOfUsersWithComplexQuery extends AbstractPerformanceTest {
+public class RetrieveListOfUsersWithComplexQuery extends PerformanceTestContext {
 
     @Test
     public void run() throws UnsupportedEncodingException {
@@ -37,6 +37,6 @@ public class RetrieveListOfUsersWithComplexQuery extends AbstractPerformanceTest
                 + " and (userName co \"er3\" or userName co \"4\")"
                 + " and (emails sw \"email3\" and emails.type eq \"work\")").build();
 
-        osiamConnector.searchUsers(query, accessToken);
+        OSIAM_CONNECTOR.searchUsers(query, ACCESS_TOKEN);
     }
 }
