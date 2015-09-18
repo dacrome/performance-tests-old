@@ -27,13 +27,13 @@ import org.junit.Test;
 import org.osiam.resources.scim.Group;
 import org.osiam.resources.scim.MemberRef;
 
-public class RetrieveAllUsersOfOneGroup extends AbstractPerformanceTest {
+public class RetrieveAllUsersOfOneGroup extends PerformanceTestContext {
 
     @Test
     public void run() {
-        Group group = osiamConnector.getGroup(PerformanceTestContext.VALID_GROUP_ID, accessToken);
+        Group group = OSIAM_CONNECTOR.getGroup(PerformanceTestContext.VALID_GROUP_ID, ACCESS_TOKEN);
         for (MemberRef currMember : group.getMembers()) {
-            osiamConnector.getUser(currMember.getValue(), accessToken);
+            OSIAM_CONNECTOR.getUser(currMember.getValue(), ACCESS_TOKEN);
         }
     }
 }

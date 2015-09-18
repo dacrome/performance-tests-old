@@ -25,10 +25,10 @@ package org.osiam.tests.performance;
 
 import org.junit.Test;
 
-public class RetrieveSingleUser extends AbstractPerformanceTest {
+public class RetrieveSingleUser extends PerformanceTestContext {
 
     @Test
     public void run() {
-        osiamConnector.getUser(PerformanceTestContext.VALID_USER_ID, accessToken);
+        OSIAM_CONNECTOR.getUser(PerformanceTestContext.VALID_USER_ID, ACCESS_TOKEN);
     }
 }
